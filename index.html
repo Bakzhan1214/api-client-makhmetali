@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="User Explorer — учебное приложение для работы с Fetch API и JSONPlaceholder.">
+  <title>User Explorer — лабораторная работа №6</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="#" aria-label="User Explorer — на главную">
+        <span class="brand-mark" aria-hidden="true">UE</span>
+        <span>User Explorer</span>
+      </a>
+      <span class="header-note">Lab №6</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro" aria-labelledby="page-title">
+      <h1 id="page-title">Изучайте пользователей</h1>
+      <p class="intro-text">Ищите пользователей, открывайте их профили и исследуйте данные JSONPlaceholder.</p>
+    </section>
+
+    <section class="search-panel panel" aria-labelledby="search-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Поиск по API</p>
+          <h2 id="search-title">Найдите пользователя</h2>
+        </div>
+      </div>
+      <form id="search-form" class="search-form">
+        <label class="visually-hidden" for="search-input">Имя или username пользователя</label>
+        <input
+          id="search-input"
+          name="username"
+          type="search"
+          placeholder="Например, Bret"
+          autocomplete="off"
+        >
+        <button class="button button-primary" type="submit">Найти</button>
+      </form>
+      <p class="search-hint">Поиск отправляется на сервер по полю username. Оставьте поле пустым, чтобы загрузить всех пользователей.</p>
+    </section>
+
+    <section class="users-section" aria-labelledby="users-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Каталог</p>
+          <h2 id="users-title">Пользователи</h2>
+        </div>
+        <span id="users-count" class="count-badge" aria-live="polite"></span>
+      </div>
+      <div id="users-status" class="status-message" role="status" aria-live="polite"></div>
+      <div id="users-list" class="users-grid"></div>
+    </section>
+
+    <section id="details-section" class="details-section panel" aria-labelledby="details-title" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Профиль</p>
+          <h2 id="details-title">Подробная информация</h2>
+        </div>
+        <button id="close-details" class="button button-secondary" type="button">Закрыть</button>
+      </div>
+      <div id="details-content"></div>
+    </section>
+
+    <section class="statistics-section panel" aria-labelledby="statistics-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Два параллельных запроса</p>
+          <h2 id="statistics-title">Статистика</h2>
+        </div>
+        <button id="refresh-statistics" class="button button-secondary" type="button">Обновить статистику</button>
+      </div>
+      <div id="statistics-status" class="status-message" role="status" aria-live="polite"></div>
+      <div id="statistics-results" class="stats-grid" hidden>
+        <article class="stat-card">
+          <span class="stat-icon stat-icon-blue" aria-hidden="true">01</span>
+          <div>
+            <p class="stat-label">Пользователи</p>
+            <p id="users-total" class="stat-value">—</p>
+          </div>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon stat-icon-purple" aria-hidden="true">02</span>
+          <div>
+            <p class="stat-label">Публикации</p>
+            <p id="posts-total" class="stat-value">—</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>Данные предоставлены <a href="https://jsonplaceholder.typicode.com/" target="_blank" rel="noreferrer">JSONPlaceholder</a>.</p>
+      <p>  HTTP GET · Fetch API</p>
+    </div>
+  </footer>
+</body>
+</html>
