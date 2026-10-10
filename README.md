@@ -46,8 +46,10 @@
 
 ## Скриншот приложения
 
+<img width="1467" height="745" alt="Без интернета" src="https://github.com/user-attachments/assets/a0346f1a-75fd-4b22-9802-63bcd1b09379" />
 
-![Скриншот приложения User Explorer](screenshot.png)
+<img width="1512" height="865" alt="С интернетом" src="https://github.com/user-attachments/assets/dbc6d5ea-4930-4109-ad3b-591f8342e8bc" />
+
 
 
 
